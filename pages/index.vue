@@ -8,22 +8,17 @@
         <nuxt-link to="/login" class="text-white">ログインしてはじめる</nuxt-link>
       </button>
     </div>
-    <h4 class="text-center new_post mt-4 pb-4">最新投稿！</h4>
-    <div id="carouselExampleControls" class="carousel slide col-md-7 mx-auto border" data-ride="carousel">
+    <h4 class="text-center new_post mt-4 pb-4">最新投稿</h4>
+    <div id="carouselExampleControls" class="carousel slide col-md-5 mx-auto mt-3" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
           <nuxt-link :to="`/posts/${posts.posts[0].id}`">
-            <img class="d-block w-100" src='https://picsum.photos/250/120' alt="First slide">
+            <img class="d-block w-100" :src="'https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/' + posts.posts[0].img_path" alt="First slide">
           </nuxt-link>
         </div>
         <div class="carousel-item">
           <nuxt-link :to="`/posts/${posts.posts[1].id}`">
-            <img class="d-block w-100" :src="'https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/' + posts.posts[1].img_path" alt="Second slide">
-          </nuxt-link>
-        </div>
-        <div class="carousel-item">
-          <nuxt-link :to="`/posts/${posts.posts[2].id}`">
-            <img class="d-block w-100" :src="'https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/' + posts.posts[2].img_path" alt="Third slide">
+            <img class="d-block w-100" :src="'https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/' + posts.posts[1].img_path" alt="First slide">
           </nuxt-link>
         </div>
     </div>
@@ -46,21 +41,28 @@
     <h4 class="text-center crown mt-5 pb-4">
       <i class="fas fa-crown text-warning pr-1"></i>報酬ランキング
     </h4>
-    <div class="users row mt-5 justify-content-center" v-if="posts.feeRank.length>5">
-      <div class="text-center mb-3 mx-2 col-md-2 user_icon">
-        <img src="" alt="" /><br>
-        <p>{{posts.feeRank[0].name}}</p>
-        <p>{{posts.feeRank[0].total_fee}}</p>
-      </div>
-      <div class="text-center mb-3 mx-2 col-md-2 user_icon">
-        <img src="" alt="" /><br>
-        <p>{{posts.feeRank[1].name}}</p>
-        <p>{{posts.feeRank[1].total_fee}}</p>
+    <div class="users row mt-5 justify-content-center" v-if="posts.feeRank.length > 5">
+      <!-- <div class="text-center mb-3 mx-2 col-md-2 user_icon" v-for="user in feeRank" :key="user.id">-->
+      <div class="text-center mb-3 mx-2 col-md-2 user_icon" v-for="x in 5" :key="x.id">
+        <nuxt-link :to="`/users/${feeRank[x].user_id}`">
+          <p class="text-dark">{{x}}位</p>
+          <template v-if="feeRank[x].img_path">
+            <img src="" alt="" /><br>
+          </template>
+          <template v-else>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5BxhOQJ1qlEmkDNRxsOHpcduHYuHdloVi4g&usqp=CAU" class="user ml-2" alt="">                    
+          </template>
+          <p class="text-dark">{{feeRank[x].name}}さん</p>
+          <p class="text-dark">{{feeRank[x].total_fee}}円</p>
+        </nuxt-link>
       </div>
     </div>
     <div v-else>
-        データが存在しません
+      <p class="text-center">データが存在しません</p>
     </div>
+    <p class="text-right">
+      <nuxt-link to="/users">配達員一覧へ</nuxt-link>
+    </p>
 </div>
 </template>
 
@@ -85,6 +87,7 @@ export default {
   data() {
     return {
       posts: [],
+      feeRank:[]
     };
   },
   async asyncData({ $axios }) {
@@ -92,6 +95,7 @@ export default {
     console.log(data)
     return {
       posts: data,
+      feeRank:data.feeRank
     };
   },
 };

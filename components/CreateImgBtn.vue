@@ -4,8 +4,8 @@
       class="btn btn-primary btn-lg bg-success border-0"
       ref="capture"
     > -->
-    <div class="wrap">
-        <div class="button" ref="capture">作成する</div>
+    <div class="wrap mb-3">
+        <div class="button border bg-success text-light py-1" ref="capture">投稿する</div>
     </div>
       <!-- 投稿
     </button> -->

@@ -4,8 +4,11 @@
         <div class="col-md-7 mx-auto users">
             <div class="user py-2 mb-2 border " v-for="user in users" :key="user.id">
                 <nuxt-link :to="{ path:'/users/'+ user.id, params:{id:user.id}}" class="d-flex flex-row">
-                    <div class="user_img">
+                    <div class="user_img" v-if="user.img_path">
                         <img :src="'https://uber-s3.s3-ap-northeast-1.amazonaws.com/profile/' + user.img_path" class="user" alt="">                    
+                    </div>
+                    <div class="user_img" v-else>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5BxhOQJ1qlEmkDNRxsOHpcduHYuHdloVi4g&usqp=CAU" class="user ml-2" alt="">                    
                     </div>
                     <div class="name col-md-10">
                         <p class="name pt-2 text-dark">

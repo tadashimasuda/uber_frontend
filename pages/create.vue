@@ -88,6 +88,7 @@
 import CreateImgBtn from "@/components/CreateImgBtn";
 
 export default {
+    middleware:['auth'],
     components: {
         CreateImgBtn,
     },
