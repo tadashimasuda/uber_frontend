@@ -18,8 +18,6 @@ export const actions = {
         });
     },
     setLoading({ commit }, payload) {
-        console.log('setLoad');
-
         commit("setLoading", payload);
     },
 };

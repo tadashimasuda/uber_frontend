@@ -64,7 +64,6 @@ export default {
             password:this.form.password,
           }
         })
-        console.log(data)
       }).catch(err=>{
         console.log(err)
       })

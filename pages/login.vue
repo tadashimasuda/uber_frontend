@@ -40,7 +40,6 @@ export default {
                 password:this.form.password,
               }
             }).then(data=>{
-              console.log(data)
               this.$router.push({
                 path:this.$route.query.redirect||'/'
                 })

@@ -92,7 +92,6 @@ export default {
   },
   async asyncData({ $axios }) {
     let data  = await $axios.$get("/posts");
-    console.log(data)
     return {
       posts: data,
       feeRank:data.feeRank
