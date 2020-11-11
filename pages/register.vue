@@ -22,6 +22,7 @@
         <label>パスワード(確認用)</label>
         <input v-model.trim="form.password_confirmation" type="password" class="form-control"/>
         <small class="form-text text-danger" v-if="errors.password_confirmation">{{errors.password_confirmation[0]}}</small>
+
       </div>
       <div class="form-group">
         <label>配達手段</label>
@@ -43,7 +44,6 @@
 
 <script>
 export default {
-  middleware:['guest'],
   data() {
     return {
       form: {

@@ -7,28 +7,25 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <nuxt-link class="nav-link" to="/users">配達員一覧</nuxt-link>
-      </li>
-      <li class="nav-item active">
-        <nuxt-link class="nav-link" to="/posts">投稿一覧</nuxt-link>
+        <nuxt-link class="nav-link" to="/">サンプル</nuxt-link>
       </li>
     </ul>
     <template v-if="!authenticated">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <nuxt-link class="nav-link" to="/login">ログイン</nuxt-link>
-          </li>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <nuxt-link class="nav-link" to="/login">ログイン</nuxt-link>
+        </li>
       </ul>
     </template>
     <template v-if="authenticated">
       <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <nuxt-link :to="`/users/${user.id}`" class="nav-link">{{user.name}}</nuxt-link>
-          </li>
-          <li class="nav-item">
-            <a @click.prevent="logout" class="nav-link">ログアウト</a>
-          </li>
-        </ul>
+        <li class="nav-item">
+          <a class="nav-link">{{user.name}}</a>
+        </li>
+        <li class="nav-item">
+          <a @click.prevent="logout" class="nav-link">Logout</a>
+        </li>
+      </ul> 
     </template>
   </div>
 </nav>
