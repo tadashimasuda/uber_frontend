@@ -23,6 +23,7 @@
 
 <script>
 export default {
+    middleware:['guest'],
     data(){
         return {
             form:{
@@ -41,7 +42,7 @@ export default {
             }).then(data=>{
               console.log(data)
               this.$router.push({
-                path:this.$route.query.redirect||'/dashboard'
+                path:this.$route.query.redirect||'/'
                 })
             }).catch(err=>{
               console.log(err)
