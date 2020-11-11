@@ -79,10 +79,6 @@ export default {
                 this.image = reader.result;
             }
         },
-        // onFileChange(e){
-        //     this.image = e.target.files;
-        //     console.log(this.image);
-        // },
         edit(){
             console.log(data);
             const data = {
