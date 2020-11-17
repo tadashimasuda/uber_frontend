@@ -11,6 +11,7 @@ export default {
           {
             backgroundColor: "#04C950",
             data: this.data,
+            label: '獲得金額',
           },
         ],
       },

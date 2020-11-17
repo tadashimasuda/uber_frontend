@@ -21,6 +21,20 @@
                     </nuxt-link>
             </div>
         </div>
+        <nav>
+            <ul class="pagination justify-content-center">
+                <li v-for="(key, value) in links" :key="value" class="page-item">
+                <template v-if="key">
+                    <a @click="loadMore(key)" href="#" class="page-link">
+                        <template v-if="value =='first'">1</template>
+                        <template v-if="value =='last'">最後へ</template>
+                        <template v-if="value =='prev'">前へ</template>
+                        <template v-if="value =='next'">次へ</template>
+                    </a>
+                </template>
+                </li>
+            </ul>
+        </nav>
     </div>
 </template>
 
@@ -46,13 +60,47 @@ export default {
     data() {
     return {
       posts: [],
+      links:[],
     };
   },
-  async asyncData({ $axios }) {
-    let {data}  = await $axios.$get("/posts/all");
+  async asyncData({ $axios, error }) {
+    try {
+        let {data,links}  = await $axios.$get("/posts/all");
+        return {
+            posts: data,
+            links
+        };
+    } catch (err) {
+      error({
+        statusCode: err.response.status,
+        message: err.response.data.message,
+      });
+    }
+  },
+  methods:{
+      async loadMore(key) {
+        // try {
+        //     let {data} =  await this.$axios.$get(key)
+        //     return this.posts = {...this.posts, ...data}
+        // } catch (err) {
+        //     console.log({
+        //         statusCode: err.response.status,
+        //         message: err.response.data.message,
+        // });
+        // }
+    },
+  },
+  head() {
     return {
-      posts: data,
-    };
-  },
+        title: '配達記録一覧| Uber配達員メーター',
+        meta:[
+          {
+            hid:"description",
+            name:"description",
+            content:`配達パートナーによる投稿記録ページです。　${this.posts.length}件の配達を今すぐ見てみましょう！　簡単登録で配達パートナーで情報共有！　稼げるエリアや地域、稼げる時間帯を共有`,
+          }
+        ]
+    }
+    },
 }
 </script>

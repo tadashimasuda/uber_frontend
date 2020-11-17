@@ -92,6 +92,18 @@ export default {
             }
             this.$store.dispatch("edit",data);
         }
-	}
+	},
+    head() {
+		return {
+            title: 'ユーザー情報編集| Uber配達員メーター',
+            meta:[
+                {
+                    hid:"description",
+                    name:"description",
+                    content:"ユーザー情報編集　簡単登録で配達パートナーで情報共有！　稼げるエリアや地域、稼げる時間帯を共有",
+                }
+            ]
+		}
+	},
 }
 </script>

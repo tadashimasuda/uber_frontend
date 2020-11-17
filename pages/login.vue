@@ -46,7 +46,19 @@ export default {
             }).catch(err=>{
               console.log(err)
             })
-    }
-	}
+        }
+	},
+    head() {
+		return {
+      title: 'ログイン | Uber配達員メーター',
+      meta:[
+          {
+            hid:"description",
+            name:"description",
+            content:"ログインしてはじめる！　簡単登録で配達パートナーで情報共有！　稼げるエリアや地域、稼げる時間帯を共有",
+          }
+        ]
+		}
+	},
 }
 </script>

@@ -65,7 +65,8 @@ export default {
     "@nuxtjs/auth"
   ],
   axios:{
-    baseURL:"http://localhost:8000/api"
+    // baseURL:"http://localhost:8000/api"
+    baseURL:"https://uberapplication.herokuapp.com/api"
   },
   auth:{
     strategies:{

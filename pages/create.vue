@@ -1,5 +1,5 @@
 <template>
-    <div class="container col-10">
+    <div class="container">
         <div class="post mt-5 mx-auto">
             <div id="image">
                 <p id="img_title">本日の配達</p>
@@ -10,15 +10,16 @@
                 </div>
                 <div id="img_fee">
                     <span id="fee">{{ fee }}円</span>
+                </div>
             </div>
-    </div>
         </div>
+
         <div class="col-md-5 border mx-auto mt-5">
             <form>
                 <div class="form-group">
                     <label>エリア</label>
                     <input v-model="area" type="text" class="form-control">
-                    <small class="form-text text-danger" v-if="errors.area">{{errors.area}}</small>
+                    <small class="form-text text-danger" v-if="errors.area">{{errors.area[0]}}</small>
                 </div>
                 <div class="form-group ">
                     <label>配達件数</label>
@@ -27,25 +28,24 @@
                         {{ count }}
                         </option>
                     </select>
-                    <small class="form-text text-danger" v-if="errors.count">{{errors.count}}</small>
+                    <small class="form-text text-danger" v-if="errors.count">{{errors.count[0]}}</small>
                 </div>
                 <div class="form-group ">
                     <label>報酬金額</label>
                     <input v-model="fee" type="text" class="form-control">
-                    <small class="form-text text-danger" v-if="errors.fee">{{errors.fee}}</small>
+                    <small class="form-text text-danger" v-if="errors.fee">{{errors.fee[0]}}</small>
                 </div>
                 <div class="form-group ">
                     <label>メッセージ</label>
                     <textarea v-model="message" cols="5" rows="5" class="form-control"></textarea>
-                    <small class="form-text text-danger" v-if="errors.message">{{errors.message}}</small>
+                    <small class="form-text text-danger" v-if="errors.message">{{errors.message[0]}}</small>
                 </div>
                 <div class="form-group ">
                     <label>開始時刻:</label>
                     <div class="start">
-                        
                         <select v-model="start_hour" class="form-control col-4 d-inline-block" >
-                            <option v-for="staer_hour in 24" :key="staer_hour.id" :value="staer_hour">
-                                {{ staer_hour }}
+                            <option v-for="start_hour in 24" :key="start_hour.id" :value="start_hour">
+                                {{ start_hour }}
                             </option>
                         </select>
                         <p class="col-1 d-inline-block">時</p>
@@ -55,8 +55,8 @@
                             </option>
                         </select>
                         <p class="col-1 d-inline-block">分</p>
-                    <small class="form-text text-danger" v-if="errors.start_hour">{{errors.start_hour}}</small>
-                    <small class="form-text text-danger" v-if="errors.start_min">{{errors.start_min}}</small>
+                    <small class="form-text text-danger" v-if="errors.start_hour">{{errors.start_hour[0]}}</small>
+                    <small class="form-text text-danger" v-if="errors.start_min">{{errors.start_min[0]}}</small>
                     </div>
                     <label>終了時刻</label>
                     <div class="end">
@@ -72,8 +72,8 @@
                             </option>
                         </select>
                         <p class="col-1 d-inline-block">分</p>
-                    <small class="form-text text-danger" v-if="errors.end_hour">{{errors.end_hour}}</small>
-                    <small class="form-text text-danger" v-if="errors.end_min">{{errors.end_min}}</small>
+                    <small class="form-text text-danger" v-if="errors.end_hour">{{errors.end_hour[0]}}</small>
+                    <small class="form-text text-danger" v-if="errors.end_min">{{errors.end_min[0]}}</small>
                     </div>
                 </div>
                 <client-only placeholder="Loading...">
@@ -140,7 +140,19 @@ export default {
                 end_min:this.end_min,
             });
         }
-    }
+    },
+    head() {
+		return {
+            title: '配達を記録する | Uber配達員メーター',
+            meta:[
+                {
+                    hid:"description",
+                    name:"description",
+                    content:"地域、エリアを入力して共有　簡単登録で配達パートナーで情報共有！　稼げるエリアや地域、稼げる時間帯を共有",
+                }
+            ]
+		}
+	},
 }
 </script>
 
@@ -148,45 +160,54 @@ export default {
 div#image{
   background-color: black;
   border: #35aa3e solid 20px;
-  height: 300px;
+  border-right: #35aa3e solid 28px;
+  height: 288px;
   width: 600px;
   margin: 0 auto;
   color: #fff;
   font-weight: bold;
   text-align: center;
 }
-p#img_title {
-  font-size: 20px;
-}
-p#img_area {
-  font-size: 35px;
-}
+    p#img_title {
+    font-size: 30px;
+    }
+  p#img_area {
+    font-size: 30px;
+  }
 #time,#count {
-  font-size: 40px;
-}
-div#img_fee {
-  font-size: 65px;
-}
+    font-size: 35px;
+
+  }
+  div#img_fee {
+    font-size: 40px;
+  }
 @media screen and (max-width: 460px) {
   div#image {
     border: #35aa3e solid 10px;
-    padding: 20px 0;
-    height: 200px;
-    width: 350px;
+    height: 48%;
+    width: 100%;
     margin: 0 auto;
     color: #fff;
     font-weight: bold;
     text-align: center;
     margin-top: 100px;
   }
+    p#img_title {
+    font-size: 16px;
+    line-height: 16px;
+    }
   p#img_area {
     font-size: 16px;
+    line-height: 16px;
   }
 #time,#count {
     font-size: 30px;
+    line-height: 30px;
+
   }
   div#img_fee {
-    font-size: 35px;
+    font-size: 30px;
+    line-height: 50px;
   }
 }
 </style>

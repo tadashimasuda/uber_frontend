@@ -12,6 +12,9 @@
       <li class="nav-item active">
         <nuxt-link class="nav-link" to="/posts">投稿一覧</nuxt-link>
       </li>
+      <li class="nav-item active">
+        <nuxt-link class="nav-link" to="/create">投稿する</nuxt-link>
+      </li>
     </ul>
     <template v-if="!authenticated">
         <ul class="navbar-nav ml-auto">

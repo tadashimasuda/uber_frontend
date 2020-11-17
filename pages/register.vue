@@ -68,6 +68,18 @@ export default {
         console.log(err)
       })
     }
-  }
+  },
+    head() {
+		return {
+      title: '新規登録 | Uber配達員メーター',
+      meta:[
+          {
+            hid:"description",
+            name:"description",
+            content:"新規登録してはじめる！　簡単登録で配達パートナーで情報共有！　稼げるエリアや地域、稼げる時間帯を共有",
+          }
+        ]
+		}
+	},
 };
 </script>
