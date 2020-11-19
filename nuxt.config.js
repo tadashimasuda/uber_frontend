@@ -8,7 +8,7 @@ export default {
       { hid: 'description', name: 'description', content: '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.ico' },
       {
         rel: "stylesheet",
         href:
@@ -49,7 +49,8 @@ export default {
   plugins: [
     "./plugins/mixins/user.js",
     "./plugins/mixins/validation.js",
-    "./plugins/axios.js"
+    "./plugins/axios.js",
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
