@@ -49,7 +49,8 @@ export default {
   plugins: [
     "./plugins/mixins/user.js",
     "./plugins/mixins/validation.js",
-    "./plugins/axios.js"
+    "./plugins/axios.js",
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
