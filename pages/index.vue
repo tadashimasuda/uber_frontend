@@ -4,7 +4,7 @@
       配達記録の共有&個人データ管理が簡単にできるサイトです。<br />ツイッターで簡単にぶやけます。
     </p>
     <div class="tweet_btn text-center">
-      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">ツイートする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
     <div class="text-center">
       <button class="btn btn-danger mt-3">

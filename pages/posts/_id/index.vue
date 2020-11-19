@@ -8,7 +8,7 @@
             <div @click="deletePost(post.id)" class="btn text-right col-md-12" v-if="user.id === postUser.id">削除する</div>
         </div>
         <div class="tweet_btn text-center">
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">ツイートする</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
         <div class="col-md-4 mx-auto mt-2 border">
             <nuxt-link :to="{ path:'/users/'+ postUser.id, params:{id:postUser.id}}">
