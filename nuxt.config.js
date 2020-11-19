@@ -63,7 +63,12 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     "@nuxtjs/axios",
-    "@nuxtjs/auth"
+    "@nuxtjs/auth",
+    '@nuxtjs/google-gtag',
+    {
+      id: 'G-466G1WZ300',
+      debug: true
+    }
   ],
   axios:{
     // baseURL:"http://localhost:8000/api"
