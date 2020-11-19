@@ -64,12 +64,12 @@ export default {
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/auth",
-    '@nuxtjs/google-gtag',
-    {
-      id: 'G-466G1WZ300',
-      debug: true
-    }
+    '@nuxtjs/google-analytics',
+    
   ],
+  googleAnalytics:{
+    id: 'G-466G1WZ300'
+   },
   axios:{
     // baseURL:"http://localhost:8000/api"
     baseURL:"https://uberapplication.herokuapp.com/api"
