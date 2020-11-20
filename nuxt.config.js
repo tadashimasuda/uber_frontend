@@ -65,7 +65,7 @@ export default {
     "@nuxtjs/axios",
     "@nuxtjs/auth",
     ['@nuxtjs/google-analytics', {
-      id: 'G-2V8LF31GPM'
+      id: 'G-VPEX69SYD2'
     }]
   ], 
   axios:{
