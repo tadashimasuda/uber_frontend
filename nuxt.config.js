@@ -50,6 +50,7 @@ export default {
     "./plugins/mixins/user.js",
     "./plugins/mixins/validation.js",
     "./plugins/axios.js",
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -57,18 +58,16 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
-    '@nuxtjs/google-analytics'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/auth",
-  ],
-  googleAnalytics: {
-    id: 'G-466G1WZ300' 
-  },
-   
+    ['@nuxtjs/google-analytics', {
+      id: 'G-466G1WZ300'
+    }]
+  ], 
   axios:{
     // baseURL:"http://localhost:8000/api"
     baseURL:"https://uberapplication.herokuapp.com/api"
