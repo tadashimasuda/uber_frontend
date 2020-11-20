@@ -64,11 +64,12 @@ export default {
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/auth",
-    '@nuxtjs/google-analytics',
-    
+  ],
+  buildModules: [
+    '@nuxtjs/google-analytics'
   ],
   googleAnalytics: {
-    id: '253432653' 
+    id: 'G-466G1WZ300' 
   },
    
   axios:{
