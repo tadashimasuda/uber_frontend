@@ -30,7 +30,7 @@ export default ({ app }) => {
     /*
      ** 現在のページをセット
      */
-    ga('create', 'G-466G1WZ300', 'auto')
+    ga('create', 'G-VPEX69SYD2', 'auto')
     /*
      ** ルートが変更されるたびに毎回実行（初期化も実行される）
      */
