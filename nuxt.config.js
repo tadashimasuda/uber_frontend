@@ -58,17 +58,14 @@ export default {
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
   buildModules: [
+    ['@nuxtjs/google-analytics', { id: 'G-VPEX69SYD2' }],
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/auth",
-    '@nuxtjs/google-analytics'
   ], 
-  googleAnalytics: {
-    id: 'G-VPEX69SYD2'
-   },
   axios:{
     // baseURL:"http://localhost:8000/api"
     baseURL:"https://uberapplication.herokuapp.com/api"
