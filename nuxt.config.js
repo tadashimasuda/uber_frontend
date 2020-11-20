@@ -50,25 +50,24 @@ export default {
     "./plugins/mixins/user.js",
     "./plugins/mixins/validation.js",
     "./plugins/axios.js",
-    { src: '~plugins/ga.js', mode: 'client' }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  // buildModules: [
-  //   '@nuxtjs/google-analytics'
-  // ],
+  buildModules: [
+    '@nuxtjs/google-analytics'
+  ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/auth",
   ],
-  // googleAnalytics: {
-  //   id: 'G-466G1WZ300' 
-  // },
+  googleAnalytics: {
+    id: 'G-466G1WZ300' 
+  },
    
   axios:{
     // baseURL:"http://localhost:8000/api"
