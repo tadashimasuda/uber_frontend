@@ -57,20 +57,18 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
-  buildModules: [
-  ],
+  // buildModules: [
+  //   '@nuxtjs/google-analytics'
+  // ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     "@nuxtjs/axios",
     "@nuxtjs/auth",
   ],
-  buildModules: [
-    '@nuxtjs/google-analytics'
-  ],
-  googleAnalytics: {
-    id: 'G-466G1WZ300' 
-  },
+  // googleAnalytics: {
+  //   id: 'G-466G1WZ300' 
+  // },
    
   axios:{
     // baseURL:"http://localhost:8000/api"
