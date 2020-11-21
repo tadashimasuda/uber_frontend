@@ -33,7 +33,7 @@ export default {
         }
     },
     methods: {
-		async login(){
+		async login({$auth}){
       try {
         const response = await this.$auth.loginWith("local",{
           data:{
