@@ -41,6 +41,7 @@ export default {
             password:this.form.password,
           }
         })
+        this.$router.push({path:this.$route.query.redirect||'/'})
       } catch (error) {
         console.log(error)
       }
