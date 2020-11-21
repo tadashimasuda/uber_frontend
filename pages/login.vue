@@ -1,7 +1,7 @@
 <template>
     <div class="container col-md-6 mt-5 shadow-lg py-5">
         <h2 class="text-center text-success">ログイン</h2>
-        <form @submit.prevent="submit">
+        <form @submit.prevent="login">
             <div class="form-group">
                 <label>メールアドレス</label>
                 <input v-model.trim="form.email" type="email" class="form-control" autofocus>
@@ -33,20 +33,18 @@ export default {
         }
     },
     methods: {
-		submit(){
-            this.$auth.loginWith("local",{
-              data:{
-                email:this.form.email,
-                password:this.form.password,
-              }
-            }).then(data=>{
-              this.$router.push({
-                path:this.$route.query.redirect||'/'
-                })
-            }).catch(err=>{
-              console.log(err)
-            })
-        }
+		async login(){
+      try {
+        const response = await this.$auth.loginWith("local",{
+          data:{
+            email:this.form.email,
+            password:this.form.password,
+          }
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
 	},
     head() {
 		return {

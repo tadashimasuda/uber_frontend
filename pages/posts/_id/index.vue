@@ -88,13 +88,17 @@ export default {
         }
     },
     async asyncData({$axios,params}){
-        const {data} = await $axios.$get(`/posts/${params.id}`)
-        return {
-            post:data.post,
-            postUser:data.user,
-            likes_user_id:data.likes_user_id,
-            comments:data.comments
-        }
+        try {
+            const {data} = await $axios.$get(`/posts/${params.id}`); 
+            return {
+                post:data.post,
+                postUser:data.user,
+                likes_user_id:data.likes_user_id,
+                comments:data.comments
+            }   
+        } catch (error) {
+            console.log(error);
+        }   
     },
     methods:{
        async postComment({$axios,params}){

@@ -95,22 +95,20 @@
 export default {
   data() {
     return {
-      posts: [],
-      feeRank:[]
+      posts:'',
+      feeRank:''
     };
   },
   async asyncData({ $axios, error }) {
-    await $axios.$get('/posts').then( res => {
+    try {
+      const res = await $axios.$get('/posts');
       return {
         posts: res.posts,
         feeRank:res.feeRank
       }
-    }).catch (err=>{
-        error({
-          statusCode: err.response.status,
-          message: err.response.data.message,
-        });
-    })
+    } catch (err) {
+        console.log(err);
+    }
   },
   head() {
 			return {

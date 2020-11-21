@@ -77,13 +77,17 @@ export default {
     };
   },
   async asyncData({ route,$axios }) {
-    const id = route.params.id;
-    let {data}  = await $axios.$get(`/user/${id}`);
-    return {
-      userData: data.user,
-      posts:data.posts,
-      chartData:data.chartData
-    };
+      try {
+        const id = route.params.id;
+        let {data}  = await $axios.$get(`/user/${id}`);
+        return {
+            userData: data.user,
+            posts:data.posts,
+            chartData:data.chartData
+        };
+      } catch (error) {
+        console.log(error);
+    }
   },
   filters: {
     created_at:function(created_at){

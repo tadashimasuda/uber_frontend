@@ -55,12 +55,18 @@ export default {
       links:[]
     };
   },
-  async asyncData({ $axios }) {
-    let {data,links}  = await $axios.$get("/users");
-    return {
-      users: data,
-      links
-    };
+  async asyncData({ $axios,error }) {
+    try {
+        let {data,links}  = await $axios.$get("/users");
+        return {
+        users: data,
+        links
+        };        
+    } catch (error) {
+        console.log(error);
+    }
+
+
   },
   methods:{
       async loadMore(key) {

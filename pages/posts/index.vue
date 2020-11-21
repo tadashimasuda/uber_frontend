@@ -71,10 +71,7 @@ export default {
             links
         };
     } catch (err) {
-      error({
-        statusCode: err.response.status,
-        message: err.response.data.message,
-      });
+      console.log(err);
     }
   },
   methods:{

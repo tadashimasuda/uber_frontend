@@ -1,7 +1,7 @@
 <template>
   <div class="container col-md-6 mt-5 shadow-lg py-5">
     <h2 class="text-center text-success">新規登録</h2>
-    <form @submit.prevent="submit">
+    <form @submit.prevent="register">
       <div class="form-group">
         <label>ユーザーネーム</label>
         <input v-model.trim="form.name" type="text" class="form-control" autofocus/>
@@ -56,18 +56,19 @@ export default {
     };
   },
   methods: {
-      submit(){
-      this.$axios.$post("register",this.form).then(data=>{
-        this.$auth.loginWith("local",{
+      async register(){
+        try {
+          const res_login = await this.$axios.$post("register",this.form);
+          const res_register = await this.$auth.loginWith("local",{
           data:{
             email:this.form.email,
             password:this.form.password,
           }
-        })
-      }).catch(err=>{
-        console.log(err)
-      })
-    }
+        });
+        } catch (error) {
+          console.log(error)
+        }
+      }
   },
     head() {
 		return {
