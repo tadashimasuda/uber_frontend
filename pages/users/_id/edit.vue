@@ -80,7 +80,6 @@ export default {
             }
         },
         edit(){
-            console.log(data);
             const data = {
                 name:this.name,              
                 email:this.email,
