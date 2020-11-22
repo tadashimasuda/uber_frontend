@@ -67,16 +67,17 @@ export default {
     '@nuxtjs/proxy'
   ], 
   axios:{
+    // baseURL:"http://localhost:8000/api",
     baseURL:"https://uberapplication.herokuapp.com/api",
     withCredentials: true,
-    // prefix :'/api/',
-    // proxy:true,
+    prefix :'/api/',
+    proxy:true,
   },
-  // proxy: {
-  //   '/api/':{
-  //     target :'https://uberapplication.herokuapp.com',
-  //   },
-  // },
+  proxy: {
+    '/api/':{
+      target :'https://uberapplication.herokuapp.com',
+    },
+  },
   auth:{
     strategies:{
       local:{

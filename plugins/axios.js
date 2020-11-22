@@ -1,6 +1,7 @@
 export default function({ $axios, store, redirect }) {
 	$axios.onError(error => {
 		console.log(error.message);
+		console.log(error);
 		if (error.response.status === 422) {
 			store.dispatch("validation/setErrors", error.response.data.errors);
 			// return redirect("/login");

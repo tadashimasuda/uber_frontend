@@ -1,7 +1,7 @@
 <template>
     <div class="container col-md-6 mt-5 shadow-lg py-5">
         <h2 class="text-center text-success">ログイン</h2>
-        <form @submit.prevent="submit">
+        <form @submit.prevent="login">
             <div class="form-group">
                 <label>メールアドレス</label>
                 <input v-model.trim="form.email" type="email" class="form-control" autofocus>
@@ -41,9 +41,7 @@ export default {
               }
             }).then(data=>{
               console.log(data)
-              this.$router.push({
-                path:this.$route.query.redirect||'/'
-                })
+              this.$router.push({path:this.$route.query.redirect||'/'})
             }).catch(err=>{
               console.log(err)
             })
@@ -56,7 +54,8 @@ export default {
             password:this.form.password,
           }
         })
-        this.$router.push({path:this.$route.query.redirect||'/'})
+        console.log(response);
+        this.$router.push('/')
       } catch (error) {
         console.log(error)
       }
