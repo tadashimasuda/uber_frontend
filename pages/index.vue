@@ -72,7 +72,6 @@
     <p class="text-right">
       <nuxt-link to="/users">配達員一覧へ</nuxt-link>
     </p>
-    <Footer />
 </div>
 </template>
 
@@ -93,12 +92,7 @@
 </style>
 
 <script>
-import Footer from "@/components/Footer";
-
 export default {
-  components:{
-        Footer
-  },
   data() {
     return {
       posts:'',

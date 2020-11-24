@@ -10,8 +10,8 @@ export const mutations = {
 };
 
 export const actions = {
-    async setPost({ commit },payload) {        
-        await this.$axios.$post('/posts',payload).then(()=>{
+    async setPost({ commit },payload) { 
+        await this.$axios.$post('/posts',payload).then((data)=>{
             this.$router.push('/');
         }).catch(err=>{
             console.log(err)

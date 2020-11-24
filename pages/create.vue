@@ -98,7 +98,6 @@ export default {
                 fee:'',
                 transport:1,
                 message:'',
-                count:'',
                 start_hour:'',
                 start_min:'',
                 end_hour:'',

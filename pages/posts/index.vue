@@ -11,7 +11,7 @@
                     <nuxt-link :to="`/users/${post.user.user_id}`">
                         <div class="user d-flex my-1">
                             <template v-if="user.img_path">
-                                <img :src="`https://uber-s3.s3-ap-northeast-1.amazonaws.com/profile/` + post.user.img_path" class="user ml-2 my-1" alt=""><br>
+                                <img :src="`https://uber-s3.s3-ap-northeast-1.amazonaws.com/profile/` + user.img_path" class="user ml-2 my-1" alt=""><br>
                             </template>
                             <template v-else>
                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcT5BxhOQJ1qlEmkDNRxsOHpcduHYuHdloVi4g&usqp=CAU" class="user ml-2 my-1" alt="">                    
@@ -35,7 +35,6 @@
                 </li>
             </ul>
         </nav>
-    <Footer />
     </div>
 </template>
 
@@ -57,11 +56,7 @@ h3{
 </style>
 
 <script>
-import Footer from "@/components/Footer";
 export default {
-    components:{
-        Footer
-    },
     data() {
     return {
       posts: [],
