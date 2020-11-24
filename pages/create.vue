@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="post mt-5 mx-auto">
+        <div class="post mt-3 mx-auto">
             <div id="image">
                 <p id="img_title">本日の配達</p>
                 <p id="img_area">{{ area }} エリア</p>
@@ -13,8 +13,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-5 border mx-auto mt-5">
+        <div class="form col-md-5 py-2 mx-auto my-5 shadow-sm">
             <form>
                 <div class="form-group">
                     <label>エリア</label>
@@ -79,7 +78,7 @@
                 <client-only placeholder="Loading...">
                     <CreateImgBtn @click="create"/>
                </client-only>   
-        </form>
+            </form>
         </div>
     </div>
 </template>

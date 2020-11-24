@@ -1,8 +1,8 @@
 <template>
     <div class="container col-md-9">
         <h3 class="mt-5">投稿一覧</h3>
-        <div class="row" v-if="posts">
-            <div class="posts mt-4 col-md-6" v-for="post in posts" :key="post.id">
+        <div class="row mb-3" v-if="posts">
+            <div class="posts mt-4 col-md-6 shadow-sm" v-for="post in posts" :key="post.id">
                     <nuxt-link :to="`/posts/${post.id}`">
                         <div class="post">
                             <img :src="`https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/` + post.img_path" alt="">
@@ -21,7 +21,7 @@
                     </nuxt-link>
             </div>
         </div>
-        <nav>
+        <nav class="mb-5">
             <ul class="pagination justify-content-center">
                 <li v-for="(key, value) in links" :key="value" class="page-item">
                 <template v-if="key">
@@ -35,6 +35,7 @@
                 </li>
             </ul>
         </nav>
+    <Footer />
     </div>
 </template>
 
@@ -56,7 +57,11 @@ h3{
 </style>
 
 <script>
+import Footer from "@/components/Footer";
 export default {
+    components:{
+        Footer
+    },
     data() {
     return {
       posts: [],
@@ -76,15 +81,15 @@ export default {
   },
   methods:{
       async loadMore(key) {
-        // try {
-        //     let {data} =  await this.$axios.$get(key)
-        //     return this.posts = {...this.posts, ...data}
-        // } catch (err) {
-        //     console.log({
-        //         statusCode: err.response.status,
-        //         message: err.response.data.message,
-        // });
-        // }
+        try {
+            let {data} =  await this.$axios.$get(key)
+            return this.posts = {...this.posts, ...data}
+        } catch (err) {
+            console.log({
+                statusCode: err.response.status,
+                message: err.response.data.message,
+        });
+        }
     },
   },
   head() {

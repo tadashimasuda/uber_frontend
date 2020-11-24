@@ -10,7 +10,7 @@
         <div class="tweet_btn text-center">
             <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false"></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-        <div class="col-md-4 mx-auto mt-2 border">
+        <div class="col-md-4 mx-auto mt-2 shadow-sm">
             <nuxt-link :to="{ path:'/users/'+ postUser.id, params:{id:postUser.id}}">
                 <div class="user d-flex">
                     <img :src="`https://uber-s3.s3-ap-northeast-1.amazonaws.com/profile/${postUser.img_path}`" class="ml-2 my-1" alt="">
@@ -21,7 +21,7 @@
         </div>
         <div class="message col-md-10 mx-auto mt-5" v-if="post.message">
             <h3 class="message_title text-left">メッセージ</h3>
-            <p class="ml-4">{{post.message}}</p>
+            <div class="col-md-10" style="white-space: pre-wrap; word-wrap:break-word;" v-text="post.message"></div>
         </div>
         <p class="text-center mt-4"><i class="far fa-thumbs-up"></i>{{post.like_count}}件</p>
         <div class="text-center mt-4">
@@ -39,7 +39,7 @@
                     <div class="name ml-1">{{comment.user.username}}</div>
                 </div>
                 
-            <div class="comment ml-5">                    
+            <div class="comment ml-5" style="white-space: pre-wrap; word-wrap:break-word;">                    
                 <div>{{comment.comment}}</div>
             </div>
         </div>

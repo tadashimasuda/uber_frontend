@@ -31,8 +31,8 @@
             <div class="col-md-11 mx-auto">
                 <BarChart :labels="chartData.created_at|created_at" :data="chartData.fee"/>
             </div>
-            <div class="posts row col-md-12 mx-auto ml-1 mt-5">
-                <div class="post col-md-6 " v-for="post in posts" :key="post.id">
+            <div class="posts row col-md-12 mx-auto mt-5">
+                <div class="post shadow-sm" v-for="post in posts" :key="post.id">
                     <nuxt-link :to="`/posts/${post.id}`">
                         <img :src="`https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/${post.img_path}`" class="border-bottom" alt="">
                     </nuxt-link>

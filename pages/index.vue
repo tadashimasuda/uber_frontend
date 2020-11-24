@@ -1,5 +1,5 @@
 <template>
-  <div class="container col-11">
+  <div class="container col-11  mb-5">
     <p class="text-center mt-5">
       配達記録の共有&個人データ管理が簡単にできるサイトです。<br />ツイッターで簡単にぶやけます。
     </p>
@@ -72,6 +72,7 @@
     <p class="text-right">
       <nuxt-link to="/users">配達員一覧へ</nuxt-link>
     </p>
+    <Footer />
 </div>
 </template>
 
@@ -92,7 +93,12 @@
 </style>
 
 <script>
+import Footer from "@/components/Footer";
+
 export default {
+  components:{
+        Footer
+  },
   data() {
     return {
       posts:'',

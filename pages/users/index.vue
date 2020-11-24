@@ -2,7 +2,7 @@
     <div class="container col-md-9">
         <h3 class="pb-2 users_title my-5">登録されている配達員一覧</h3>
         <div class="col-md-7 mx-auto users">
-            <div class="user py-2 mb-2 border " v-for="user in users" :key="user.id">
+            <div class="user py-2 mb-2 shadow-sm" v-for="user in users" :key="user.id">
                 <nuxt-link :to="{ path:'/users/'+ user.id, params:{id:user.id}}" class="d-flex flex-row">
                     <div class="user_img" v-if="user.img_path">
                         <img :src="'https://uber-s3.s3-ap-northeast-1.amazonaws.com/profile/' + user.img_path" class="user ml-2" alt="">                    
