@@ -42,7 +42,7 @@ Uber配達員の配達報告・管理サービス
     - Backend : Laravel
 
 - DB
-    -Mysql
+    - Mysql
 
 - 技術
     - 認証周り
