@@ -5,8 +5,8 @@ backend( [github]:https://github.com/tadashimasuda/uber_backend )
 ## 作った理由
     自分自身のuber配達経験とTwitterで配達履歴を報告するユーザーが多数見かけられたので制作。Uber配達は収入増加のため効率よく回りたいのでそれなりの情報がほしい。よって、情報共有可能なサービスを制作。
 
-## アプリ概要 (URL:[https://uber-post.netlify.app])(データが表示されない場合はリロードしてください。修正します。)
-Uber配達員の配達報告・管理サービス
+## アプリ概要 (URL:[https://uber-post.netlify.app])
+Uber配達員の配達報告・管理サービス(データが表示されない場合はリロードしてください。修正します。)
 1. ユーザーがアプリにアクセス
 2. NuxtからLaravelのAPIを実行
 3. AWS S3への投稿された画像の保存
