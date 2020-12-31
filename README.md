@@ -15,8 +15,6 @@ Uber配達員の配達報告・管理サービス
 
 ![uber](https://user-images.githubusercontent.com/51233312/103137855-29b97180-4710-11eb-9367-079a3fc00a69.png)
 
-- 生成される画像イメージ
-<img src="https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/13e343b9-fdc8-4f52-a6cf-d6bc2798e891" width="50%" height="50%">
 
 ## 注力した点（Nuxt.js）
 - 初めてのバックエンドとフロントエンドを切り離し
@@ -33,6 +31,10 @@ Uber配達員の配達報告・管理サービス
 - 投稿一覧
 - ページネーション
 - ユーザーランキング表示（報酬額順）
+
+- 生成される画像イメージ(投稿機能)
+<img src="https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/13e343b9-fdc8-4f52-a6cf-d6bc2798e891" width="50%" height="50%">
+
 
 ## 使用した言語、技術、サービス
 - 言語
