@@ -33,7 +33,7 @@ Uber配達員の配達報告・管理サービス(データが表示されない
 - ユーザーランキング表示（報酬額順）
 
 ## 各ページ
-<img src="https://user-images.githubusercontent.com/51233312/103509556-bf8a9480-4ea6-11eb-9d7f-5e2b2aae2842.png" width="25%" ><img src="https://user-images.githubusercontent.com/51233312/103509562-c1545800-4ea6-11eb-8b7c-ae7325573cc9.png" width="25%" ><img src="https://user-images.githubusercontent.com/51233312/103509563-c1ecee80-4ea6-11eb-932d-eb018fbff442.png" width="25%" ><img src="https://user-images.githubusercontent.com/51233312/103509564-c2858500-4ea6-11eb-84e3-4bf36b982e0f.png" width="25%" ><img src="https://user-images.githubusercontent.com/51233312/103509567-c31e1b80-4ea6-11eb-9e31-d1f144d90af6.png" width="25%" ><img src="https://user-images.githubusercontent.com/51233312/103509568-c3b6b200-4ea6-11eb-9b7a-318fcdf641e7.png" width="25%" >
+<img src="https://user-images.githubusercontent.com/51233312/103509556-bf8a9480-4ea6-11eb-9d7f-5e2b2aae2842.png" width="20%" ><img src="https://user-images.githubusercontent.com/51233312/103509562-c1545800-4ea6-11eb-8b7c-ae7325573cc9.png" width="20%" ><img src="https://user-images.githubusercontent.com/51233312/103509563-c1ecee80-4ea6-11eb-932d-eb018fbff442.png" width="20%" ><img src="https://user-images.githubusercontent.com/51233312/103509564-c2858500-4ea6-11eb-84e3-4bf36b982e0f.png" width="20%" ><img src="https://user-images.githubusercontent.com/51233312/103509567-c31e1b80-4ea6-11eb-9e31-d1f144d90af6.png" width="20%" ><img src="https://user-images.githubusercontent.com/51233312/103509568-c3b6b200-4ea6-11eb-9b7a-318fcdf641e7.png" width="20%" >
 
 
 - 生成される画像イメージ(投稿機能)
