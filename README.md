@@ -6,7 +6,7 @@ backend( [github]:https://github.com/tadashimasuda/uber_backend )
     自分自身のuber配達経験とTwitterで配達履歴を報告するユーザーが多数見かけられたので制作。Uber配達は収入増加のため効率よく回りたいのでそれなりの情報がほしい。よって、情報共有可能なサービスを制作。
 
 ## アプリ概要 (URL:[https://uber-post.netlify.app])
-Uber配達員の配達報告・管理サービス(データが表示されないなどの不具合はリロードしてください。修正します。)
+Uber配達員の配達報告・管理サービス(データが表示されないなどの不具合はリロードしてください。ページ画像は下記にあります。)
 1. ユーザーがアプリにアクセス
 2. NuxtからLaravelのAPIを実行
 3. AWS S3への投稿された画像の保存
@@ -31,6 +31,15 @@ Uber配達員の配達報告・管理サービス(データが表示されない
 - 投稿一覧
 - ページネーション
 - ユーザーランキング表示（報酬額順）
+
+## 各ページ
+<img src="https://user-images.githubusercontent.com/51233312/103509556-bf8a9480-4ea6-11eb-9d7f-5e2b2aae2842.png" width="25%" >
+<img src="https://user-images.githubusercontent.com/51233312/103509562-c1545800-4ea6-11eb-8b7c-ae7325573cc9.png" width="25%" >
+<img src="https://user-images.githubusercontent.com/51233312/103509563-c1ecee80-4ea6-11eb-932d-eb018fbff442.png" width="25%" >
+<img src="https://user-images.githubusercontent.com/51233312/103509564-c2858500-4ea6-11eb-84e3-4bf36b982e0f.png" width="25%" >
+<img src="https://user-images.githubusercontent.com/51233312/103509567-c31e1b80-4ea6-11eb-9e31-d1f144d90af6.png" width="25%" >
+<img src="https://user-images.githubusercontent.com/51233312/103509568-c3b6b200-4ea6-11eb-9b7a-318fcdf641e7.png" width="25%" >
+
 
 - 生成される画像イメージ(投稿機能)
 <img src="https://uber-s3.s3-ap-northeast-1.amazonaws.com/post/13e343b9-fdc8-4f52-a6cf-d6bc2798e891" width="50%" height="50%">
